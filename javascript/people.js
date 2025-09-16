@@ -141,3 +141,4 @@ const people=[
     }
     
 ];
+const computerChoice=Math.floor(Math.random()*people.length);

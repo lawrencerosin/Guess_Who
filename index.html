@@ -7,18 +7,66 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="javascript/people.js"></script>
     <script src="javascript/setup.js"></script>
+    <script src="javascript/questions.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/people.css">
     <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/selection.css">
+    <script>
+        function FillPersonSelection(){
+            const choosePerson=document.getElementById("choose_person");
+            for(let personNum=0; personNum<10; personNum++){
+                function AddPerson(type, increase){
+                    const person=document.createElement("li");
+                    const personImage=document.createElement("img");
+                    personImage.src="images/"+type+" "+(personNum+1)+".jpg";
+                    personImage.setAttribute("alt", type+" "+personNum);
+                    person.appendChild(personImage);
+                    const name=document.createElement("span");
+                    name.textContent+=people[personNum*2+increase]["name"];
+                    person.appendChild(name);
+                    person.addEventListener("click", function(){
+                            document.getElementById("my_character").innerHTML=person.innerHTML;
+                            choosePerson.parentElement.style.display="none";
+                    });
+                    choosePerson.appendChild(person);
+                }
+                AddPerson("man", 0);
+                AddPerson("woman", 1);
+
+            }
+        }
+    </script>
 </head>
-<body onload="SetupBoard('player-board'); SetupBoard('computer-board');" style="background-color:orange;">
+<body onload="SetupBoard('player_board'); SetupBoard('computer_board'); FillPersonSelection();" style="background-color:orange;">
+    <form>
+        Choose Your Person:
+        <ul id="choose_person">
+        </ul>
+    </form>
+    <div id="game">
     <div id="boards" >
-      <div id="player-board">
+      <div id="player_board" class="board">
       
       </div>
-      <div id="computer-board">
+      <div id="my_character">
 
       </div>
-   </div>
+      <div id="computer_board" class="board">
+
+      </div>
+      <form>
+        Ask a Question:
+        <select id="questions">
+           <option>Is your person bald?</option>
+           <option>Is your person a man?</option>
+           <option>Is your person white?</option>
+           <option>Does your person have this colored hair?</option>
+        </select>
+        <input type="text" id="property">
+        <button type="button" id="ask">Ask</button>
+      </form>
+    </div>
+    </div>
    <template id="board">
      <div><span><img src="images/man 1.jpg" alt="man 1" class="img-rounded"></span><span><img src="images/woman 1.jpg" alt="woman 1"></td><td><img src="images/man 2.jpg" alt="man 2"></span><span><img src="images/woman 2.jpg" alt="woman 2"></span></div>
      <div><span><img src="images/man 3.jpg" alt="man 3"></span><span><img src="images/woman 3.jpg" alt="woman 3"></td><td><img src="images/man 4.jpg" alt="man 4"></span><span><img src="images/woman 4.jpg" alt="woman 4"></span></div>
