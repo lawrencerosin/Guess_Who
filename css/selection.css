@@ -1,0 +1,10 @@
+li{
+    list-style-type:none;
+    background-color:white;
+    border:1px solid black;
+    width:100px;
+    margin-bottom:10px;
+}
+li:hover{
+    background-color:yellow;
+}
