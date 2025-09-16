@@ -133,7 +133,7 @@ const people=[
         bald:false
     },
      {
-        name:"Jenny",
+        name:"Sally",
         gender: "woman",
         skin_color:"white",
         hair_color: "black",
