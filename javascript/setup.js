@@ -11,4 +11,17 @@ function SetupBoard(boardId){
         cell.appendChild(name);
       
    }
+   DescribeCharacters(board);
+   alert(board.innerHTML);
+}
+function DescribeCharacters(board){
+    for(let hPosition=0;hPosition<board.children.length; hPosition++){
+      const row=board.children[hPosition];
+       for(let vPosition=0;vPosition<row.children.length; vPosition++){
+           const character=people[hPosition*5+vPosition];
+           for(let property in character){
+              board.children[hPosition].children[vPosition].setAttribute(property, character[property]);
+           }
+       }
+    }
 }

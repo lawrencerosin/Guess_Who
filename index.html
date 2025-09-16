@@ -6,7 +6,7 @@
     <title>Guess Who</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="javascript/people.js"></script>
-    <script src="javascript/setup.js"></script>
+    <script src="javascript/setup.js" defer></script>
     <script src="javascript/questions.js" defer></script>
     <link rel="stylesheet" type="text/css" href="css/people.css">
     <link rel="stylesheet" href="css/board.css">
@@ -37,7 +37,7 @@
         }
     </script>
 </head>
-<body onload="SetupBoard('player_board'); SetupBoard('computer_board'); FillPersonSelection();" style="background-color:orange;">
+<body onload="SetupBoard('player_board'); SetupBoard('computer-board'); FillPersonSelection();" style="background-color:orange;">
     <form>
         Choose Your Person:
         <ul id="choose_person">
@@ -63,7 +63,7 @@
            <option>Does your person have this colored hair?</option>
         </select>
         <input type="text" id="property">
-        <button type="button" id="ask">Ask</button>
+        <button id="ask">Ask</button>
       </form>
     </div>
     </div>
