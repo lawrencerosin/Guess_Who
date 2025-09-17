@@ -141,4 +141,5 @@ const people=[
     }
     
 ];
-const computerChoice=Math.floor(Math.random()*people.length);
+const computerCharacter=people[Math.floor(Math.random()*people.length)];
+let playerCharacter;

@@ -37,7 +37,7 @@
         }
     </script>
 </head>
-<body onload="SetupBoard('player_board'); SetupBoard('computer-board'); FillPersonSelection();" style="background-color:orange;">
+<body onload="SetupBoard('player_board'); SetupBoard('computer_board'); FillPersonSelection();" style="background-color:orange;">
     <form>
         Choose Your Person:
         <ul id="choose_person">
@@ -45,24 +45,25 @@
     </form>
     <div id="game">
     <div id="boards" >
-      <div id="player_board" class="board">
-      
+      <div id="player_board">
+
       </div>
       <div id="my_character">
 
       </div>
-      <div id="computer_board" class="board">
-
+      <div id="computer_board">
+        
       </div>
       <form>
         Ask a Question:
         <select id="questions">
+           <option>Is your person named?</option>
            <option>Is your person bald?</option>
            <option>Is your person a man?</option>
            <option>Is your person white?</option>
            <option>Does your person have this colored hair?</option>
         </select>
-        <input type="text" id="property">
+        <input type="text" id="property" pattern="[A-Za-z]" required>
         <button id="ask">Ask</button>
       </form>
     </div>
