@@ -1,5 +1,5 @@
 :root{
-    --dimension:100px;
+    --dimension:200px;
 }
 img{
   margin-right:20px;  
@@ -7,9 +7,13 @@ img{
   height:50px;  
 }
 .choice{
-    display:inline-block;
+ /*   display:inline-block;*/
     width:"var(--dimension)";
     height:"var(--dimension)";
     border-radius:5px;
     border:2px solid white;
+}
+.name{
+  width:10px;
+  display:inline-block;
 }

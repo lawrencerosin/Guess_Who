@@ -16,11 +16,16 @@ function RemoveNo(board, character, property, value){
         
         for(let vPosition=0; vPosition<board.children[hPosition].children.length; vPosition++){
             const person=board.children[hPosition].children[vPosition];
-           console.log(person.getAttribute(property));
             if((person.getAttribute(property)==value)!=(character[property]==value))
-                board.children[hPosition].children[vPosition].style.display="none"; 
+                person.style.display="none"; 
         }
     }
+}
+function AnswerQuestion(property, value){
+   if(computerCharacter[property]==value)
+     alert("Yes");
+   else 
+     alert("No");
 }
 const ask=document.getElementById("ask");
 ask.addEventListener("click", function(press){
@@ -29,7 +34,13 @@ ask.addEventListener("click", function(press){
     switch(questions.value){
         case questions.children[0].textContent:
                 const name=document.getElementById("property").value;
+                AnswerQuestion("name", name);
                 RemoveNo(board, computerCharacter, "name", name);
                 break;
+        case questions.children[1].textContent:
+             AnswerQuestion("bald", true);
+
+             RemoveNo(board, computerCharacter, "bald", true);
+             break;
     }
 });
