@@ -42,18 +42,18 @@ const people=[
         bald:false
     },
      {
-        name:"Mike",
+        name:"Max",
         gender: "man",
-        skin_color:"black",
-        hair_color: "",
-        bald:true
+        skin_color:"white",
+        hair_color: "brown",
+        bald:false
     },
     {
         name:"Kelly",
         gender: "woman",
         skin_color:"white",
         hair_color: "brown",
-        bald:true
+        bald:false
     },
      {
         name:"Josh",
