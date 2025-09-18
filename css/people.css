@@ -1,5 +1,5 @@
 :root{
-    --dimension:200px;
+    --dimension:500px;
 }
 img{
   margin-right:20px;  
@@ -7,11 +7,13 @@ img{
   height:50px;  
 }
 .choice{
- /*   display:inline-block;*/
+  
     width:"var(--dimension)";
     height:"var(--dimension)";
     border-radius:5px;
+    padding-right:100px;
     border:2px solid white;
+    overflow:scroll;
 }
 .name{
   width:10px;

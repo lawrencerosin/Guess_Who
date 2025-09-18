@@ -22,9 +22,14 @@ function RemoveNo(board, character, property){
     for(let hPosition=0; hPosition<board.children.length; hPosition++){
         
         for(let vPosition=0; vPosition<board.children[hPosition].children.length; vPosition++){
-            console.log(ParseBoolean(board.children[hPosition].children[vPosition].getAttribute("bald"))==true);
-            if(ParseBoolean(board.children[hPosition].children[vPosition].getAttribute(property))!=character[property])
+            
+            if(typeof people[hPosition*4+vPosition][property]=="boolean"){
+              if(ParseBoolean(board.children[hPosition].children[vPosition].getAttribute(property))!=character[property])
                 board.children[hPosition].children[vPosition].style.display="none"; 
+            }
+            else if(board.children[hPosition].children[vPosition].getAttribute(property)!=character[property])
+                 board.children[hPosition].children[vPosition].style.display="none";
+                
         }
     }
 }
@@ -50,8 +55,8 @@ ask.addEventListener("click", function(press){
              RemoveNo(board, computerCharacter, "bald");
              break;
         case questions.children[2].textContent:
-            AnswerQuestion("man", true);
-            RemoveNo(board, computerCharacter, "man");
+            AnswerQuestion("gender", "man");
+            RemoveNo(board, computerCharacter, "gender");
             break;
     }
 });

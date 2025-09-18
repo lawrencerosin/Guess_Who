@@ -44,16 +44,16 @@ const people=[
      {
         name:"Max",
         gender: "man",
-        skin_color:"white",
-        hair_color: "brown",
-        bald:false
+        skin_color:"black",
+        hair_color: "",
+        bald:true
     },
     {
         name:"Kelly",
         gender: "woman",
         skin_color:"white",
         hair_color: "brown",
-        bald:false
+        bald:true
     },
      {
         name:"Josh",

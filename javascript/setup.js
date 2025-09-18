@@ -6,7 +6,7 @@ function SetupBoard(){
         //This is supposed to display the name of the person, but it gets messy with this
         for(let hPosition=0; hPosition<usedBoard.children.length; hPosition++){
           const row=usedBoard.children[hPosition];
-          for(let vPosition=0; vPosition<row.children.length; vPosition++){
+          for(let vPosition=0; vPosition<usedBoard.children[hPosition].children.length; vPosition++){
             const name=document.createElement("span");
             name.textContent=people[hPosition*4+vPosition]["name"];
             name.className="name";
@@ -27,17 +27,13 @@ function DescribeCharacters(board){
       const row=board.children[hPosition];
        for(let vPosition=0;vPosition<row.children.length; vPosition++){
            const character=people[hPosition*4+vPosition];
-           const cell=board.children[hPosition].children[vPosition];
+            
            for(let property in character){
             
-              //Makes sure boolean is parsed properly
-              //if(typeof character[property]!="boolean")
-                 cell.setAttribute(property, character[property]);
+             
+                 board.children[hPosition].children[vPosition].setAttribute(property, character[property]);
                
-              /*else if(character[property])
-                   cell.setAttribute(property, "true");
-              else
-                   cell.setAttribute(property, "");*///Falsey value
+              
            }
        }
     }

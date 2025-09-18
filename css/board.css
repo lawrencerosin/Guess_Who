@@ -1,8 +1,6 @@
-:root{
-    --board-border:2px solid;
-}
+ 
 #boards{
-    display:flex;
+    display:none;
     flex-direction:row;
     justify-content:space-around;
 }
