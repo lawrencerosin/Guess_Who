@@ -1,3 +1,4 @@
+let playerBoard, computerBoard;
 function SetupBoard(){
       function Copy(id){
         const board=document.getElementById("board").cloneNode(true);
@@ -17,8 +18,8 @@ function SetupBoard(){
       }
      Copy("player_board");
      Copy("computer_board");
-   const playerBoard=document.getElementById("player_board");
-   const computerBoard=document.getElementById("computer_board");
+   playerBoard=document.getElementById("player_board");
+   computerBoard=document.getElementById("computer_board");
    DescribeCharacters(playerBoard);
    DescribeCharacters(computerBoard);
   

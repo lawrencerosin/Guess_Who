@@ -147,7 +147,7 @@ const people=[
         name:"David",
         gender: "man",
         skin_color:"white",
-        hair_color: "brown",
+        hair_color: "black",
         bald:false,
         image_url:"images/man 10.jpg"
     },
@@ -159,6 +159,6 @@ const people=[
         bald:false,
         image_url:"images/woman 10.jpg"
     },
-];
+]; 
 const computerCharacter=people[Math.floor(Math.random()*people.length)];
 let playerCharacter;
