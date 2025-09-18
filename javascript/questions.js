@@ -58,5 +58,14 @@ ask.addEventListener("click", function(press){
             AnswerQuestion("gender", "man");
             RemoveNo(board, computerCharacter, "gender");
             break;
+        case questions.children[3].textContent:
+            AnswerQuestion("skin_color", "white");
+            RemoveNo(board, computerCharacter, "skin_color");
+            break;
+        default:
+            const hairColor=document.getElementById("property").value;
+             AnswerQuestion("hair_color", hairColor);
+             RemoveNo(board, computerCharacter, "hair_color");
+             break;
     }
 });
