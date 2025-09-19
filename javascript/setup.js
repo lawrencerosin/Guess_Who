@@ -67,12 +67,18 @@ function DescribeCharacters(board){
            const character=people[hPosition*4+vPosition];
             
            for(let property in character){
-            
+                
              
                  board.children[hPosition].children[vPosition].setAttribute(property, character[property]);
-               
-              
+                 //Since the names are covered over
+                
+                
            }
+            board.children[hPosition].children[vPosition].addEventListener("click",
+                  function(){
+                     alert(board.children[hPosition].children[vPosition].querySelector("span").textContent);
+                  }
+                 );
        }
     }
 }
