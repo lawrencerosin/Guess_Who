@@ -54,6 +54,7 @@ function AnswerQuestion(property, value){
      alert("No");
 }
 const ask=document.getElementById("ask");
+ 
 ask.addEventListener("click", function(press){
     press.preventDefault();
     const board=document.getElementById("player_board");

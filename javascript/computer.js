@@ -52,12 +52,23 @@ function SelectQuestion(properties){
     }
     return selected;
 }
+function AskQuestion(selected){
+    let answer;
+    const playerCharacter=document.getElementById("my_character");
+   if(typeof people[selected["property"]]=="boolean"){
+        answer=prompt(`Is your person ${people[selected["property"]]}?`);
+        RemoveNo(computerBoard, playerCharacter, selected["property"], true);
+   }
+   else{
+        answer=prompt(`Is your person ${selected["property"]} ${selected["value"]}?`);
+        RemoveNo(computerBoard, playerCharacter, selected["property"], selected["value"]);
+   }
+    return answer;
+}
 function ComputerMove(){
     const properties=CountProperties();
     const question=SelectQuestion(properties);
-    let answer;
-    if(typeof people[question["property"]]=="boolean")
-        answer=prompt(`Is your person ${people[question["property"]]}?`);
-    else
-        answer=prompt(`Is your person ${question["property"]} ${question["value"]}?`);
+   AskQuestion(question);
+   
+     
 }
