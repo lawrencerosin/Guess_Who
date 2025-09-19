@@ -55,15 +55,29 @@ function SelectQuestion(properties){
 function AskQuestion(selected){
     let answer;
     const playerCharacter=document.getElementById("my_character");
+    const characters=computerBoard.querySelectorAll("character");
+    //This function is supposed to avoid the user entering the wrong answer
+    function AvoidCheating(question){
+      
+        while(ParseBoolean(answer.toLowerCase())!=(playerCharacter.getAttribute(selected["property"])==selected["value"])){
+            alert("Your answer is incorrect.");
+            answer=prompt(question);
+        }
+    }
+    
    if(typeof people[selected["property"]]=="boolean"){
-        answer=prompt(`Is your person ${people[selected["property"]]}?`);
-        RemoveNo(computerBoard, playerCharacter, selected["property"], true);
+        const question=`Is your person ${people[selected["property"]]}?`;
+        answer=prompt(question);
+       // AvoidCheating(question);
+        RemoveNo(characters, playerCharacter, selected["property"], true);
    }
    else{
-        answer=prompt(`Is your person ${selected["property"]} ${selected["value"]}?`);
-        RemoveNo(computerBoard, playerCharacter, selected["property"], selected["value"]);
+         const question=`Is your person ${selected["property"]} ${selected["value"]}?`;
+        answer=prompt(question);
+       // AvoidCheating(question);
+        RemoveNo(characters, playerCharacter, selected["property"], selected["value"]);
    }
-    return answer;
+    
 }
 function ComputerMove(){
     const properties=CountProperties();

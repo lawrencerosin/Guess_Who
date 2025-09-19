@@ -13,32 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/people.css">
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/selection.css">
-    <script>
-        function FillPersonSelection(){
-            const choosePerson=document.getElementById("choose_person");
-            for(let personNum=0; personNum<10; personNum++){
-                function AddPerson(type, increase){
-                    const person=document.createElement("li");
-                    const personImage=document.createElement("img");
-                    personImage.src="images/"+type+" "+(personNum+1)+".jpg";
-                    personImage.setAttribute("alt", type+" "+personNum);
-                    person.appendChild(personImage);
-                    const name=document.createElement("span");
-                    name.textContent+=people[personNum*2+increase]["name"];
-                    person.appendChild(name);
-                    person.addEventListener("click", function(){
-                            document.getElementById("my_character").innerHTML=person.innerHTML;
-                            choosePerson.parentElement.style.display="none";
-                            document.getElementById("boards").style.display="flex";
-                    });
-                    choosePerson.appendChild(person);
-                }
-                AddPerson("man", 0);
-                AddPerson("woman", 1);
-
-            }
-        }
-    </script>
+    
 </head>
 <body onload="SetupBoard('player_board'); SetupBoard('computer_board'); FillPersonSelection();" style="background-color:orange;">
     <form>

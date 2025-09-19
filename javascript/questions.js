@@ -18,7 +18,7 @@ function NameCase(word){
     else
         name=word[0];
     for(let position=1; position<word.length; position++){
-        if(word[0]>='A'&&word[0]<='Z')
+        if(word[position]>='A'&&word[position]<='Z')
           name+=String.fromCharCode(word[position]-32);
         else
           name+=word[position];
@@ -31,21 +31,23 @@ function ParseBoolean(value){
     else
         return false;
 }
-function RemoveNo(board, character, property, value){
+function RemoveNo(characters, character, property, value){
   
-    for(let hPosition=0; hPosition<board.children.length; hPosition++){
-        
-        for(let vPosition=0; vPosition<board.children[hPosition].children.length; vPosition++){
-            
-            if(typeof people[hPosition*4+vPosition][property]=="boolean"){
-              if((ParseBoolean(board.children[hPosition].children[vPosition].getAttribute(property))==value)!=(character[property]==value))
-                board.children[hPosition].children[vPosition].style.display="none"; 
+    for(let position=0; position<characters.length; position++){
+             
+            if(typeof people[position][property]=="boolean"){
+                  
+              if((ParseBoolean(characters[position].getAttribute(property))==value)!=(character[property]==value))
+                characters[position].style.display="none"; 
+               
             }
-            else if((board.children[hPosition].children[vPosition].getAttribute(property)==value)!=(character[property]==value))
-                 board.children[hPosition].children[vPosition].style.display="none";
+            else if((characters[position].getAttribute(property)==value)!=(character[property]==value)){
+                 characters[position].style.display="none";
+                 
+            }
                 
         }
-    }
+    
 }
 function AnswerQuestion(property, value){
    if(computerCharacter[property]==value)
@@ -58,29 +60,29 @@ const ask=document.getElementById("ask");
 ask.addEventListener("click", function(press){
     press.preventDefault();
     const board=document.getElementById("player_board");
-    
+    const characters=board.querySelectorAll(".character");
     switch(questions.value){
         case questions.children[0].textContent:
                 const name=document.getElementById("property").value;
                 AnswerQuestion("name", name);
-                RemoveNo(board, computerCharacter, "name", NameCase(name));
+                RemoveNo(characters, computerCharacter, "name", NameCase(name));
                 break;
         case questions.children[1].textContent:
              AnswerQuestion("bald", true);
-             RemoveNo(board, computerCharacter, "bald", true);
+             RemoveNo(characters, computerCharacter, "bald", true);
              break;
         case questions.children[2].textContent:
             AnswerQuestion("gender", "man");
-            RemoveNo(board, computerCharacter, "gender", "man");
+            RemoveNo(characters, computerCharacter, "gender", "man");
             break;
         case questions.children[3].textContent:
             AnswerQuestion("skin_color", "white");
-            RemoveNo(board, computerCharacter, "skin_color", "white");
+            RemoveNo(characters, computerCharacter, "skin_color", "white");
             break;
         default:
             const hairColor=document.getElementById("property").value.toLowerCase();
              AnswerQuestion("hair_color", hairColor);
-             RemoveNo(board, computerCharacter, "hair_color", hairColor);
+             RemoveNo(characters, computerCharacter, "hair_color", hairColor);
              break;
     }
     document.getElementById("property").value="";

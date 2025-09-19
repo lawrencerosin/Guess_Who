@@ -1,4 +1,34 @@
 let playerBoard, computerBoard;
+ function FillPersonSelection(){
+            const choosePerson=document.getElementById("choose_person");
+            for(let personNum=0; personNum<10; personNum++){
+                function AddPerson(type, increase){
+                    const person=document.createElement("li");
+                    const personImage=document.createElement("img");
+                    personImage.src="images/"+type+" "+(personNum+1)+".jpg";
+                    personImage.setAttribute("alt", type+" "+personNum);
+                    person.appendChild(personImage);
+                    const name=document.createElement("span");
+                    name.textContent+=people[personNum*2+increase]["name"];
+                    person.appendChild(name);
+                    person.addEventListener("click", function(){
+                         const playerCharacter=document.getElementById("my_character"); 
+                           playerCharacter.innerHTML=person.innerHTML;
+                            choosePerson.parentElement.style.display="none";
+                            document.getElementById("boards").style.display="flex";
+                         
+                            for(let attribute in people[personNum]){
+                                person.setAttribute(attribute, people[personNum][attribute]);
+                                playerCharacter.setAttribute(attribute, person.getAttribute(attribute));
+                            }
+                    });
+                    choosePerson.appendChild(person);
+                }
+                AddPerson("man", 0);
+                AddPerson("woman", 1);
+
+            }
+  }
 function SetupBoard(){
       function Copy(id){
         const board=document.getElementById("board").cloneNode(true);
