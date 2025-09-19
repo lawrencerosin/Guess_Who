@@ -55,7 +55,7 @@ function SelectQuestion(properties){
 function AskQuestion(selected){
     let answer;
     const playerCharacter=document.getElementById("my_character");
-    const characters=computerBoard.querySelectorAll("character");
+    const characters=computerBoard.querySelectorAll(".character");
     //This function is supposed to avoid the user entering the wrong answer
     function AvoidCheating(question){
       
