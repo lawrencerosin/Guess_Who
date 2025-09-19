@@ -16,11 +16,11 @@ function CountProperties(){
                   for(let position=0; position<properties.length; position++){
                     const cellProperty=cell.getAttribute(properties[position]["prop_name"]);
                     if(cellProperty in properties[position]){
-                        console.log("add"+cellProperty);
-                        properties[position][cellProperty]=1;
+                         
+                        properties[position][cellProperty]++;
                     }
                     else
-                        properties[position][cellProperty]++;
+                        properties[position][cellProperty]=1;
                   }
                }
         }
@@ -54,11 +54,10 @@ function SelectQuestion(properties){
 }
 function ComputerMove(){
     const properties=CountProperties();
-    alert(properties);
     const question=SelectQuestion(properties);
     let answer;
     if(typeof people[question["property"]]=="boolean")
         answer=prompt(`Is your person ${people[question["property"]]}?`);
     else
-        answer=prompt(`Is your person ${people[question["property"]]} ${people[question["value"]]}`);
+        answer=prompt(`Is your person ${question["property"]} ${question["value"]}?`);
 }

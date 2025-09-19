@@ -57,7 +57,7 @@ const ask=document.getElementById("ask");
 ask.addEventListener("click", function(press){
     press.preventDefault();
     const board=document.getElementById("player_board");
-     
+    
     switch(questions.value){
         case questions.children[0].textContent:
                 const name=document.getElementById("property").value;
@@ -82,5 +82,6 @@ ask.addEventListener("click", function(press){
              RemoveNo(board, computerCharacter, "hair_color", hairColor);
              break;
     }
+    document.getElementById("property").value="";
     ComputerMove();
 });
