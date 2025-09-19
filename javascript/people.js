@@ -1,6 +1,6 @@
 const people=[
     {
-        name:"Mike",
+        name:"mike",
         gender: "man",
         skin_color:"black",
         hair_color: "",
@@ -8,7 +8,7 @@ const people=[
         image_url: "images/man 1.jpg"
     },
      {
-        name:"Michelle",
+        name:"michelle",
         gender: "woman",
         skin_color:"black",
         hair_color: "black",
@@ -16,7 +16,7 @@ const people=[
         image_url: "images/woman 1.jpg"
     },
      {
-        name:"James",
+        name:"james",
         gender: "man",
         skin_color:"black",
         hair_color: "black",
@@ -24,7 +24,7 @@ const people=[
         image_url:"images/man 2.jpg"
     },
      {
-        name:"Catherine",
+        name:"catherine",
         gender: "woman",
         skin_color:"white",
         hair_color: "brown",
@@ -32,7 +32,7 @@ const people=[
         image_url:"images/woman 2.jpg"
     },
      {
-        name:"Arnold",
+        name:"arnold",
         gender: "man",
         skin_color:"black",
         hair_color: "",
@@ -40,7 +40,7 @@ const people=[
         image_url: "images/man 3.jpg"
     },
      {
-        name:"Dianna",
+        name:"dianna",
         gender: "woman",
         skin_color:"white",
         hair_color: "blond",
@@ -48,7 +48,7 @@ const people=[
         image_url: "images/woman 3.jpg"
     },
      {
-        name:"Max",
+        name:"max",
         gender: "man",
         skin_color:"black",
         hair_color: "",
@@ -56,7 +56,7 @@ const people=[
         image_url:"images/man 4.jpg"
     },
     {
-        name:"Kelly",
+        name:"kelly",
         gender: "woman",
         skin_color:"white",
         hair_color: "brown",
@@ -64,7 +64,7 @@ const people=[
         image_url:"images/woman 4.jpg"
     },
      {
-        name:"Josh",
+        name:"josh",
         gender: "man",
         skin_color:"white",
         hair_color: "brown",
@@ -72,7 +72,7 @@ const people=[
         image_url:"images/man 5.jpg"
     },
      {
-        name:"Sabrina",
+        name:"sabrina",
         gender: "woman",
         skin_color:"white",
         hair_color: "black",
@@ -80,7 +80,7 @@ const people=[
         image_url:"images/woman 5.jpg"
     },
     {
-        name:"Brian",
+        name:"brian",
         gender: "man",
         skin_color:"white",
         hair_color: "black",
@@ -88,7 +88,7 @@ const people=[
         image_url:"images/man 6.jpg"
     },
     {
-        name:"Jessie",
+        name:"jessie",
         gender: "woman",
         skin_color:"white",
         hair_color: "black",
@@ -96,7 +96,7 @@ const people=[
         image_url:"images/woman 6.jpg"
     },
     {
-        name:"Benjamin",
+        name:"benjamin",
         gender: "man",
         skin_color:"white",
         hair_color: "brown",
@@ -104,7 +104,7 @@ const people=[
         image_url:"images/man 7.jpg"
     },
     {
-        name:"Ashley",
+        name:"ashley",
         gender: "woman",
         skin_color:"white",
         hair_color: "brown",
@@ -112,7 +112,7 @@ const people=[
         image_url:"images/woman 7.jpg"
     },
     {
-        name:"Chris",
+        name:"chris",
         gender: "man",
         skin_color:"white",
         hair_color: "black",
@@ -120,7 +120,7 @@ const people=[
         image_url:"images/man 8.jpg"
     },
     {
-        name:"Anna",
+        name:"anna",
         gender: "woman",
         skin_color:"white",
         hair_color: "brown",
@@ -128,7 +128,7 @@ const people=[
         image_url:"images/woman 8.jpg"
     },
     {
-        name:"Andrew",
+        name:"andrew",
         gender: "man",
         skin_color:"white",
         hair_color: "black",
@@ -136,7 +136,7 @@ const people=[
         image_url:"images/man 9.jpg"
     },
     {
-        name:"Jenny",
+        name:"jenny",
         gender: "woman",
         skin_color:"white",
         hair_color: "brown",
@@ -144,7 +144,7 @@ const people=[
         image_url:"images/woman 9.jpg"
     },
      {
-        name:"David",
+        name:"david",
         gender: "man",
         skin_color:"white",
         hair_color: "black",
@@ -152,7 +152,7 @@ const people=[
         image_url:"images/man 10.jpg"
     },
      {
-        name:"Sally",
+        name:"sally",
         gender: "woman",
         skin_color:"white",
         hair_color: "black",

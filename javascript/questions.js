@@ -12,20 +12,7 @@
          property.value="";
        }
     });
-function NameCase(word){
-    let name;
-    if(word[0]>='a'&&word[0]<='z')
-        name=String.fromCharCode(word[0]-32);
-    else
-        name=word[0];
-    for(let position=1; position<word.length; position++){
-        if(word[position]>='A'&&word[position]<='Z')
-          name+=String.fromCharCode(word[position]-32);
-        else
-          name+=word[position];
-    }
-    return name;
-}
+ 
 function ParseBoolean(value){
     if(value=="true")
         return true;
@@ -71,9 +58,11 @@ ask.addEventListener("click", function(press){
     const characters=board.querySelectorAll(".character");
     switch(questions.value){
         case questions.children[0].textContent:
+           
                 const name=document.getElementById("property").value;
+                 
                 AnswerQuestion("name", name);
-                RemoveNo(characters, computerCharacter, "name", NameCase(name));
+                RemoveNo(characters, computerCharacter, "name", name.toLowerCase());
                 break;
         case questions.children[1].textContent:
              AnswerQuestion("bald", true);
