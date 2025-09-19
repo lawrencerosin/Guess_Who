@@ -75,17 +75,17 @@ function AskQuestion(selected){
    if(typeof people[selected["property"]]=="boolean"){
         const question=`Is your person's ${people[selected["property"]]}?`;
         answer=prompt(question);
-       // AvoidCheating(question);
-        RemoveNo(characters, playerCharacter, selected["property"], ParseYes(answer));
+       
    }
    else{
    
          const question=`Is your person's ${selected["property"]} ${selected["value"]}?`;
         answer=prompt(question);
+   }
        
        // AvoidCheating(question);
         ComputerRemoveInvalid(characters, selected, answer);
-   }
+   
     
 }
 function ComputerMove(){
