@@ -41,15 +41,16 @@ function ParseYes(value){
 function RemoveNo(characters, character, property, value){
   
     for(let position=0; position<characters.length; position++){
-              
+            
             if(typeof people[position][property]=="boolean"){
               
-              if((ParseBoolean(characters[position].getAttribute(property))==ParseYes(value))!=(character[property]==ParseYes(value)))
+              if((ParseBoolean(characters[position].getAttribute(property))==value)!=(character[property]==value))
                 characters[position].style.display="none"; 
                
             }
             else if((characters[position].getAttribute(property)==value)!=(character[property]==value)){
                  characters[position].style.display="none";
+                 
                  
             }
                 

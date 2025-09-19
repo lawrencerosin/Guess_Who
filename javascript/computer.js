@@ -12,7 +12,7 @@ function CountProperties(){
     const properties=[{prop_name:"name"}, {prop_name:"gender"}, {prop_name: "skin_color"}, {prop_name:"hair_color"}, {prop_name:"bald"}];
     for(let row=computerBoard.children[0]; row!==null; row=row.nextElementSibling){
         for(let cell=row.children[0]; cell!==null; cell=cell.nextElementSibling){
-            console.log(cell.style.display);
+            
                if(cell.style.display!="none"){
                   for(let position=0; position<properties.length; position++){
                     const cellProperty=cell.getAttribute(properties[position]["prop_name"]);
@@ -27,6 +27,12 @@ function CountProperties(){
         }
     }
     return properties;
+}
+function ComputerRemoveInvalid(characters, selected, answer){
+    for(let position=0; position<characters.length; position++){
+        if((characters[position].getAttribute(selected["property"])!=selected["value"])==ParseYes(answer))
+            characters[position].style.display="none";
+    }
 }
 function SelectQuestion(properties){
     let selected={property:"", value:""};
@@ -55,7 +61,7 @@ function SelectQuestion(properties){
 }
 function AskQuestion(selected){
     let answer;
-    const playerCharacter=document.getElementById("my_character");
+    
     const characters=computerBoard.querySelectorAll(".character");
     //This function is supposed to avoid the user entering the wrong answer
     function AvoidCheating(question){
@@ -70,13 +76,15 @@ function AskQuestion(selected){
         const question=`Is your person's ${people[selected["property"]]}?`;
         answer=prompt(question);
        // AvoidCheating(question);
-        RemoveNo(characters, playerCharacter, selected["property"], true);
+        RemoveNo(characters, playerCharacter, selected["property"], ParseYes(answer));
    }
    else{
+   
          const question=`Is your person's ${selected["property"]} ${selected["value"]}?`;
         answer=prompt(question);
+       
        // AvoidCheating(question);
-        RemoveNo(characters, playerCharacter, selected["property"], selected["value"]);
+        ComputerRemoveInvalid(characters, selected, answer);
    }
     
 }

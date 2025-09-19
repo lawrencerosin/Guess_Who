@@ -11,19 +11,25 @@ let playerBoard, computerBoard;
                     const name=document.createElement("span");
                     name.textContent+=people[personNum*2+increase]["name"];
                     person.appendChild(name);
+                    const holdPersonNum=personNum;
+                   
                     person.addEventListener("click", function(){
-                         const playerCharacter=document.getElementById("my_character"); 
-                           playerCharacter.innerHTML=person.innerHTML;
+                       playerCharacter=people[holdPersonNum];
+                         const myCharacter=document.getElementById("my_character"); 
+                           myCharacter.innerHTML=person.innerHTML;
                             choosePerson.parentElement.style.display="none";
                             document.getElementById("boards").style.display="flex";
                          
                             for(let attribute in people[personNum]){
+                              
                                 person.setAttribute(attribute, people[personNum][attribute]);
-                                playerCharacter.setAttribute(attribute, person.getAttribute(attribute));
+                                myCharacter.setAttribute(attribute, person.getAttribute(attribute));
                             }
                     });
                     choosePerson.appendChild(person);
+                     
                 }
+              
                 AddPerson("man", 0);
                 AddPerson("woman", 1);
 
