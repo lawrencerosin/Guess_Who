@@ -19,3 +19,9 @@ img{
   width:10px;
   display:inline-block;
 }
+ul{
+  background-color:silver;
+  width:300px;
+  margin-left:auto;
+  margin-right:auto;
+}
