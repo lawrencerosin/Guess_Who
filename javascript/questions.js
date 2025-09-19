@@ -9,6 +9,7 @@
        else{
          property.setAttribute("required", false);
          property.disabled=true;
+         property.value="";
        }
     });
 function NameCase(word){
@@ -31,13 +32,19 @@ function ParseBoolean(value){
     else
         return false;
 }
+function ParseYes(value){
+    if(value=="yes")
+        return true;
+    else
+        return false;
+}
 function RemoveNo(characters, character, property, value){
   
     for(let position=0; position<characters.length; position++){
-             
+              
             if(typeof people[position][property]=="boolean"){
-                  
-              if((ParseBoolean(characters[position].getAttribute(property))==value)!=(character[property]==value))
+              
+              if((ParseBoolean(characters[position].getAttribute(property))==ParseYes(value))!=(character[property]==ParseYes(value)))
                 characters[position].style.display="none"; 
                
             }
@@ -86,5 +93,6 @@ ask.addEventListener("click", function(press){
              break;
     }
     document.getElementById("property").value="";
-    ComputerMove();
+    if(!DisplayVictoryMessage(playerBoard, "Congratulations! You won!"))
+      ComputerMove();
 });

@@ -10,8 +10,9 @@ function MakeUnreserved(property){
 
 function CountProperties(){
     const properties=[{prop_name:"name"}, {prop_name:"gender"}, {prop_name: "skin_color"}, {prop_name:"hair_color"}, {prop_name:"bald"}];
-    for(let row=playerBoard.children[0]; row!==null; row=row.nextElementSibling){
+    for(let row=computerBoard.children[0]; row!==null; row=row.nextElementSibling){
         for(let cell=row.children[0]; cell!==null; cell=cell.nextElementSibling){
+            console.log(cell.style.display);
                if(cell.style.display!="none"){
                   for(let position=0; position<properties.length; position++){
                     const cellProperty=cell.getAttribute(properties[position]["prop_name"]);
@@ -66,13 +67,13 @@ function AskQuestion(selected){
     }
     
    if(typeof people[selected["property"]]=="boolean"){
-        const question=`Is your person ${people[selected["property"]]}?`;
+        const question=`Is your person's ${people[selected["property"]]}?`;
         answer=prompt(question);
        // AvoidCheating(question);
         RemoveNo(characters, playerCharacter, selected["property"], true);
    }
    else{
-         const question=`Is your person ${selected["property"]} ${selected["value"]}?`;
+         const question=`Is your person's ${selected["property"]} ${selected["value"]}?`;
         answer=prompt(question);
        // AvoidCheating(question);
         RemoveNo(characters, playerCharacter, selected["property"], selected["value"]);
@@ -82,7 +83,8 @@ function AskQuestion(selected){
 function ComputerMove(){
     const properties=CountProperties();
     const question=SelectQuestion(properties);
-   AskQuestion(question);
-   
+    AskQuestion(question);
+    DisplayVictoryMessage(computerBoard, "Sorry. You lost.");
+        
      
 }

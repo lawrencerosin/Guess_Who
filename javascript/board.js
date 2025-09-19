@@ -8,3 +8,14 @@ function CountRemaining(board){
     }
     return remaining;
 }
+function DisplayVictoryMessage(board, message){
+     if(CountRemaining(board)==1){
+        alert(message);
+        const property=document.getElementById("property");
+        property.disabled=true;
+        property.value="";
+        return true;
+     }
+     else
+        return false;
+}
