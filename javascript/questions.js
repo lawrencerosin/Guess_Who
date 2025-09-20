@@ -54,11 +54,15 @@ const ask=document.getElementById("ask");
  
 ask.addEventListener("click", function(press){
     press.preventDefault();
+
     const board=document.getElementById("player_board");
     const characters=board.querySelectorAll(".character");
-    switch(questions.value){
+    const property=document.getElementById("property");
+    
+    if(property.disabled==true||property.value.length>0){
+     switch(questions.value){
         case questions.children[0].textContent:
-           
+             
                 const name=document.getElementById("property").value;
                  
                 AnswerQuestion("name", name);
@@ -85,4 +89,8 @@ ask.addEventListener("click", function(press){
     document.getElementById("property").value="";
     if(!DisplayVictoryMessage(playerBoard, "Congratulations! You won!"))
       ComputerMove();
+   }
+   else{
+    alert("You must enter a value.");
+   }
 });

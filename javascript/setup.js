@@ -70,10 +70,11 @@ function DescribeCharacters(board){
                 
              
                  board.children[hPosition].children[vPosition].setAttribute(property, character[property]);
-                 //Since the names are covered over
+              
                 
                 
            }
+              //Since the names are covered over
             board.children[hPosition].children[vPosition].addEventListener("click",
                   function(){
                      alert(board.children[hPosition].children[vPosition].querySelector("span").textContent);

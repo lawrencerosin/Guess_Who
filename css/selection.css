@@ -8,10 +8,8 @@ li{
 li:hover{
     background-color:yellow;
 }
-#ask{
-    background-color:yellow;
-    border:0.5px solid green;
-}
-#ask:hover{
-    background-color:whitesmoke;
+#choose_title{
+    color:white;
+    font-size:20px;
+    text-align:center;
 }
