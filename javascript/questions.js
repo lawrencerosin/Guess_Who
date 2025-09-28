@@ -45,7 +45,7 @@ function RemoveNo(characters, character, property, value){
     
 }
 function AnswerQuestion(property, value){
-   if(computerCharacter[property]==value)
+   if(computerChoice[property]==value)
      alert("Yes");
    else 
      alert("No");
@@ -77,24 +77,24 @@ ask.addEventListener("click", function(press){
                 const name=document.getElementById("property").value;
                  
                 AnswerQuestion("name", name);
-                RemoveNo(characters, computerCharacter, "name", name.toLowerCase());
+                RemoveNo(characters, computerChoice, "name", name.toLowerCase());
                 break;
         case questions.children[1].textContent:
              AnswerQuestion("bald", true);
-             RemoveNo(characters, computerCharacter, "bald", true);
+             RemoveNo(characters, computerChoice, "bald", true);
              break;
         case questions.children[2].textContent:
             AnswerQuestion("gender", "man");
-            RemoveNo(characters, computerCharacter, "gender", "man");
+            RemoveNo(characters, computerChoice, "gender", "man");
             break;
         case questions.children[3].textContent:
             AnswerQuestion("skin_color", "white");
-            RemoveNo(characters, computerCharacter, "skin_color", "white");
+            RemoveNo(characters, computerChoice, "skin_color", "white");
             break;
         default:
             const hairColor=document.getElementById("property").value.toLowerCase();
              AnswerQuestion("hair_color", hairColor);
-             RemoveNo(characters, computerCharacter, "hair_color", hairColor);
+             RemoveNo(characters, computerChoice, "hair_color", hairColor);
              break;
     }
     document.getElementById("property").value="";
