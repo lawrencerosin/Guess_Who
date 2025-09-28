@@ -66,7 +66,7 @@ function AskQuestion(selected){
     //This function is supposed to avoid the user entering the wrong answer
     function AvoidCheating(question){
       
-        while(ParseBoolean(answer.toLowerCase())!=(playerCharacter.getAttribute(selected["property"])==selected["value"])){
+        while(ParseYes(answer.toLowerCase())!=(playerCharacter.getAttribute(selected["property"])==selected["value"])){
             alert("Your answer is incorrect.");
             answer=prompt(question);
         }

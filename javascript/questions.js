@@ -50,16 +50,27 @@ function AnswerQuestion(property, value){
    else 
      alert("No");
 }
+function ProperProperty(value){
+    if(value.length==0)
+        return false;
+    else{
+        for(let position=0; positon<value.length; position++){
+            if(!(value[position]>='A'&&value[position]<='Z'||value[position]>='a'&&value[position]<='z'))
+                return false;
+        }
+        return true;
+    }
+}
 const ask=document.getElementById("ask");
  
 ask.addEventListener("click", function(press){
     press.preventDefault();
-
+  
     const board=document.getElementById("player_board");
     const characters=board.querySelectorAll(".character");
     const property=document.getElementById("property");
     
-    if(property.disabled==true||property.value.length>0){
+    if(!property.disabled&&property.value.length==0){
      switch(questions.value){
         case questions.children[0].textContent:
              

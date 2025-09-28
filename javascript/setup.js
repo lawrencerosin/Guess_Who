@@ -11,13 +11,14 @@ let playerBoard, computerBoard;
                     const name=document.createElement("span");
                     name.textContent+=people[personNum*2+increase]["name"];
                     person.appendChild(name);
-                    const holdPersonNum=personNum;
                    
                     person.addEventListener("click", function(){
-                       playerCharacter=people[holdPersonNum];
+                       
+                      // playerCharacter=people[holdPersonNum];
                          const myCharacter=document.getElementById("my_character"); 
                            myCharacter.innerHTML=person.innerHTML;
-                            choosePerson.parentElement.style.display="none";
+                           document.getElementById("choose").style.display="none";
+                           choosePerson.style.display="none";
                             document.getElementById("boards").style.display="flex";
                          
                             for(let attribute in people[personNum]){
@@ -48,7 +49,7 @@ function SetupBoard(){
             name.textContent=people[hPosition*4+vPosition]["name"];
             name.className="name";
             usedBoard.children[hPosition].children[vPosition].appendChild(name);
-            usedBoard.children[hPosition].children[vPosition].classList.add("character");
+            usedBoard.children[hPosition].children[vPosition].classList.add("choice");
           }
         }
       }
@@ -79,7 +80,7 @@ function DescribeCharacters(board){
                   function(){
                      alert(board.children[hPosition].children[vPosition].querySelector("span").textContent);
                   }
-                 );
+            );
        }
     }
 }

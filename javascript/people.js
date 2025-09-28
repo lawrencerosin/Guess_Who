@@ -160,5 +160,5 @@ const people=[
         image_url:"images/woman 10.jpg"
     },
 ]; 
-const computerCharacter=people[Math.floor(Math.random()*people.length)];
-let playerCharacter;
+const computerChoice=people[Math.floor(Math.random()*people.length)];
+let playerChoice;

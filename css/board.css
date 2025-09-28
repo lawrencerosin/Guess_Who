@@ -3,13 +3,23 @@
     display:none;
     flex-direction:row;
     justify-content:space-around;
+    margin-top: 50px;
+    
 }
 .board{
     margin-top:20px;
     padding:7px;
      border-radius:5px;
-     width:500px;
-     max-width: 2000px;
+     width:2000px;
+     display: flex;
+     justify-content: space-evenly;
+     
+     
+}
+.row{
+    display: flex;
+    flex-direction: row;
+     justify-content: space-evenly;
 }
 #player_board{
     border:2px solid blue;
