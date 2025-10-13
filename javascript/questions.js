@@ -22,8 +22,10 @@ function ParseBoolean(value){
 function ParseYes(value){
     if(value=="yes")
         return true;
-    else
+    else if(value=="no")
         return false;
+    else
+        return "Invalid answer";
 }
 function RemoveNo(choices, choice, property, value){
   
