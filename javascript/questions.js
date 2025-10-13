@@ -25,18 +25,18 @@ function ParseYes(value){
     else
         return false;
 }
-function RemoveNo(characters, character, property, value){
+function RemoveNo(choices, choice, property, value){
   
-    for(let position=0; position<characters.length; position++){
+    for(let position=0; position<choices.length; position++){
             
             if(typeof people[position][property]=="boolean"){
               
-              if((ParseBoolean(characters[position].getAttribute(property))==value)!=(character[property]==value))
-                characters[position].style.display="none"; 
+              if((ParseBoolean(choices[position].getAttribute(property))==value)!=(choice[property]==value))
+                choices[position].style.display="none"; 
                
             }
-            else if((characters[position].getAttribute(property)==value)!=(character[property]==value)){
-                 characters[position].style.display="none";
+            else if((choices[position].getAttribute(property)==value)!=(choice[property]==value)){
+                 choices[position].style.display="none";
                  
                  
             }
@@ -67,41 +67,41 @@ ask.addEventListener("click", function(press){
     press.preventDefault();
   
     const board=document.getElementById("player_board");
-    const characters=board.querySelectorAll(".character");
+    const choices=board.querySelectorAll(".choice");
     const property=document.getElementById("property");
     
-    if(!property.disabled&&property.value.length==0){
+    if(property.disabled||property.value.length>0){
      switch(questions.value){
         case questions.children[0].textContent:
              
                 const name=document.getElementById("property").value;
                  
                 AnswerQuestion("name", name);
-                RemoveNo(characters, computerChoice, "name", name.toLowerCase());
+                RemoveNo(choices, computerChoice, "name", name.toLowerCase());
                 break;
         case questions.children[1].textContent:
              AnswerQuestion("bald", true);
-             RemoveNo(characters, computerChoice, "bald", true);
+             RemoveNo(choices, computerChoice, "bald", true);
              break;
         case questions.children[2].textContent:
             AnswerQuestion("gender", "man");
-            RemoveNo(characters, computerChoice, "gender", "man");
+            RemoveNo(choices, computerChoice, "gender", "man");
             break;
         case questions.children[3].textContent:
             AnswerQuestion("skin_color", "white");
-            RemoveNo(characters, computerChoice, "skin_color", "white");
+            RemoveNo(choices, computerChoice, "skin_color", "white");
             break;
         default:
             const hairColor=document.getElementById("property").value.toLowerCase();
              AnswerQuestion("hair_color", hairColor);
-             RemoveNo(characters, computerChoice, "hair_color", hairColor);
+             RemoveNo(choices, computerChoice, "hair_color", hairColor);
              break;
     }
     document.getElementById("property").value="";
-    if(!DisplayVictoryMessage(playerBoard, "Congratulations! You won!"))
+    if(!DisplayVictoryMessage(playerBoard, "Congratulations! You won!")){
       ComputerMove();
+     
+    }
    }
-   else{
-    alert("You must enter a value.");
-   }
+   
 });

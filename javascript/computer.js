@@ -30,6 +30,7 @@ function CountProperties(){
 }
 function ComputerRemoveInvalid(characters, selected, answer){
     for(let position=0; position<characters.length; position++){
+        console.log(selected["property"]);
         if((characters[position].getAttribute(selected["property"])!=selected["value"])==ParseYes(answer))
             characters[position].style.display="none";
     }
@@ -62,29 +63,30 @@ function SelectQuestion(properties){
 function AskQuestion(selected){
     let answer;
     
-    const characters=computerBoard.querySelectorAll(".character");
+    const choices=computerBoard.querySelectorAll(".choice");
+     
     //This function is supposed to avoid the user entering the wrong answer
     function AvoidCheating(question){
-      
-        while(ParseYes(answer.toLowerCase())!=(playerChoice.getAttribute(selected["property"])==selected["value"])){
+        
+        while(ParseYes(answer.toLowerCase())!=(playerChoice[selected["property"]]==selected["value"])){
             alert("Your answer is incorrect.");
             answer=prompt(question);
         }
     }
-    
+    let question;
    if(typeof people[selected["property"]]=="boolean"){
-        const question=`Is your person's ${people[selected["property"]]}?`;
+       question=`Is your person's ${people[selected["property"]]}?`;
         answer=prompt(question);
        
    }
    else{
    
-         const question=`Is your person's ${selected["property"]} ${selected["value"]}?`;
+        question=`Is your person's ${selected["property"]} ${selected["value"]}?`;
         answer=prompt(question);
    }
        
-       // AvoidCheating(question);
-        ComputerRemoveInvalid(characters, selected, answer);
+        AvoidCheating(question);
+        ComputerRemoveInvalid(choices, selected, answer);
    
     
 }

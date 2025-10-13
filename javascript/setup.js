@@ -11,10 +11,10 @@ let playerBoard, computerBoard;
                     const name=document.createElement("span");
                     name.textContent+=people[personNum*2+increase]["name"];
                     person.appendChild(name);
-                   
+                    const holdPersonNum=personNum;
                     person.addEventListener("click", function(){
                        
-                      // playerCharacter=people[holdPersonNum];
+                       playerChoice=people[holdPersonNum];
                          const myCharacter=document.getElementById("my_character"); 
                            myCharacter.innerHTML=person.innerHTML;
                            document.getElementById("choose").style.display="none";
