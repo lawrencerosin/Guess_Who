@@ -33,8 +33,8 @@ function RemoveNo(choices, choice, property, value){
             
             if(typeof people[position][property]=="boolean"){
               
-              if((ParseBoolean(choices[position].getAttribute(property))==value)!=(choice[property]==value))
-                choices[position].style.display="none"; 
+              if((ParseBoolean(choices[position].getAttribute(property))==value)==(choice[property]==value));
+              else  choices[position].style.display="none"; 
                
             }
             else if((choices[position].getAttribute(property)==value)!=(choice[property]==value)){
