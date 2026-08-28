@@ -30,20 +30,12 @@ function ParseYes(value){
 function RemoveNo(choices, choice, property, value){
   
     for(let position=0; position<choices.length; position++){
+            if(choices[position].getAttribute(property)==value^choice[property]==value){
+                choices[position].outerHTML="";
+                choices[position].textContent="X";
+            }
             
-            if(typeof people[position][property]=="boolean"){
-              
-              if((ParseBoolean(choices[position].getAttribute(property))==value)==(choice[property]==value));
-              else  choices[position].style.display="none"; 
-               
-            }
-            else if((choices[position].getAttribute(property)==value)!=(choice[property]==value)){
-                 choices[position].style.display="none";
-                 
-                 
-            }
-                
-        }
+    }
     
 }
 function AnswerQuestion(property, value){
