@@ -31,8 +31,7 @@ function RemoveNo(choices, choice, property, value){
   
     for(let position=0; position<choices.length; position++){
             if(choices[position].getAttribute(property)==value^choice[property]==value){
-                choices[position].outerHTML="";
-                choices[position].textContent="X";
+                choices[position].style.display="none";
             }
             
     }
